@@ -48,30 +48,32 @@
         android:layout_marginStart="84dp"
         android:layout_marginBottom="244dp"
         android:backgroundTint="#1823FF"
-        android:onClick="sumar"
         android:text="Sumar"
+        android:textColor="#FDFDFD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/multbtn"
         android:layout_width="126dp"
         android:layout_height="65dp"
         android:layout_marginStart="84dp"
         android:layout_marginBottom="176dp"
         android:backgroundTint="#01A82B"
-        android:onClick="mult"
         android:text="Multiplicar"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/dividbtn"
         android:layout_width="126dp"
         android:layout_height="65dp"
         android:layout_marginStart="212dp"
         android:layout_marginBottom="176dp"
         android:backgroundTint="#FFCA0B"
-        android:onClick="dividir"
         android:text="dividir"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -82,8 +84,8 @@
         android:layout_marginEnd="72dp"
         android:layout_marginBottom="244dp"
         android:backgroundTint="#E83C3C"
-        android:onClick="restar"
         android:text="Restar"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
