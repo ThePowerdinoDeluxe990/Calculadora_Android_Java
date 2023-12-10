@@ -3,10 +3,7 @@ package com.example.calculadorajavaandroid;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -36,79 +33,69 @@ public class MainActivity extends AppCompatActivity {
         multbtn = findViewById(R.id.multbtn);
         dividbtn = findViewById(R.id.dividbtn);
 
-        sumarbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    String valor1 = et1.getText().toString();
-                    String valor2 = et2.getText().toString();
+        sumarbtn.setOnClickListener(v -> {
+            try {
+                String valor1 = et1.getText().toString();
+                String valor2 = et2.getText().toString();
 
-                    double nro1 = Double.parseDouble(valor1);
-                    double nro2 = Double.parseDouble(valor2);
-                    double result = nro1+nro2;
-                    String resultado = String.valueOf(result);
+                double nro1 = Double.parseDouble(valor1);
+                double nro2 = Double.parseDouble(valor2);
+                double result = nro1+nro2;
+                String resultado = String.valueOf(result);
 
-                    resultext.setText("Resultado: "+resultado);
-                }catch(NumberFormatException exception){
-                    error();
-                }
+                resultext.setText("Resultado: "+resultado);
+            }catch(NumberFormatException exception){
+                error();
             }
         });
 
-        restarbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    String valor1 = et1.getText().toString();
-                    String valor2 = et2.getText().toString();
+        restarbtn.setOnClickListener(v -> {
 
-                    double nro1 = Double.parseDouble(valor1);
-                    double nro2 = Double.parseDouble(valor2);
-                    double result = nro1-nro2;
-                    String resultado = String.valueOf(result);
+            try {
+                String valor1 = et1.getText().toString();
+                String valor2 = et2.getText().toString();
 
-                    resultext.setText("Resultado: "+resultado);
-                }catch (NumberFormatException exception){
-                    error();
-                }
+                double nro1 = Double.parseDouble(valor1);
+                double nro2 = Double.parseDouble(valor2);
+                double result = nro1-nro2;
+                String resultado = String.valueOf(result);
+
+                resultext.setText("Resultado: "+resultado);
+            }catch (NumberFormatException exception){
+                error();
             }
         });
 
-        multbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try{
-                    String valor1 = et1.getText().toString();
-                    String valor2 = et2.getText().toString();
 
-                    double nro1 = Double.parseDouble(valor1);
-                    double nro2 = Double.parseDouble(valor2);
-                    double result = nro1*nro2;
-                    String resultado = String.valueOf(result);
+        multbtn.setOnClickListener(v -> {
+            try{
+                String valor1 = et1.getText().toString();
+                String valor2 = et2.getText().toString();
 
-                    resultext.setText("Resultado: "+resultado);
-                }catch (NumberFormatException exception){
-                   error();
-                }
+                double nro1 = Double.parseDouble(valor1);
+                double nro2 = Double.parseDouble(valor2);
+                double result = nro1*nro2;
+                String resultado = String.valueOf(result);
+
+                resultext.setText("Resultado: "+resultado);
+            }catch (NumberFormatException exception){
+               error();
             }
         });
 
-        dividbtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public  void onClick(View v){
-                try {
-                    String valor1 = et1.getText().toString();
-                    String valor2 = et2.getText().toString();
+        dividbtn.setOnClickListener(v -> {
+            try {
+                String valor1 = et1.getText().toString();
+                String valor2 = et2.getText().toString();
 
-                    double nro1 = Double.parseDouble(valor1);
-                    double nro2 = Double.parseDouble(valor2);
-                    double result = nro1/nro2;
-                    String resultado = String.valueOf(result);
+                double nro1 = Double.parseDouble(valor1);
+                double nro2 = Double.parseDouble(valor2);
+                double result = nro1/nro2;
+                String resultado = String.valueOf(result);
 
-                    resultext.setText("Resultado: "+resultado);
-                }catch (NumberFormatException exception){
-                    error();
-                }
+                resultext.setText("Resultado: "+resultado);
+            }catch (NumberFormatException exception){
+                error();
             }
         });
     }
@@ -117,13 +104,9 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Error");
         builder.setMessage("Input incorrecto");
-        builder.setNegativeButton("Aceptar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+        builder.setNegativeButton("Aceptar", (dialog, which) -> {
 
-            }
         });
         builder.show();
-
     }
 }
